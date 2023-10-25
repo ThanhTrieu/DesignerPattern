@@ -1,12 +1,17 @@
+import CheckNumberPhone.PhoneTarget;
+import Translation.JapaneseAdaptee;
+import Translation.TranslatorAdapter;
+import Translation.VietnameseTarget;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // ban chat singleton chi chap nhan duy nhat 1 doi tuong dc tao ra tu 1 class ma thoi (khong the dung tu khoa new de khoi tao doi tuong)
 
+        // ban chat singleton chi chap nhan duy nhat 1 doi tuong dc tao ra tu 1 class ma thoi (khong the dung tu khoa new de khoi tao doi tuong)
         // loi ko cho phep tao doi tuong voi tu khoa new
         // SingletonDP object = new SingletonDP();
-
+        /*
         SingletonDP object  = SingletonDP.getInstance();
         SingletonDP object2 = SingletonDP.getInstance();
         // object va object2 van chi la 1 doi tuong giong nhau
@@ -35,5 +40,20 @@ public class Main {
         String nghiem2 = ptn2.timNghiem(6,2);
         System.out.println(nghiem);
         System.out.println(nghiem2);
+        */
+
+        // Adapter Designer pattern
+        /*
+        PhoneTarget phoneTarget = new AdapterDP();
+        String phone1 = "fsdfsdfsf";
+        String phone2 = "0975091";
+        String phone3 = "0973456789";
+        System.out.println(phone1 + " is phone number " + phoneTarget.checkPhoneNumber(phone1));
+        System.out.println(phone2 + " is phone number " + phoneTarget.checkPhoneNumber(phone2));
+        System.out.println(phone3 + " is phone number " + phoneTarget.checkPhoneNumber(phone3));
+         */
+        VietnameseTarget client = new TranslatorAdapter(new JapaneseAdaptee());
+        client.send("Xin chao");
+
     }
 }

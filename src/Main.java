@@ -1,4 +1,7 @@
 import CheckNumberPhone.PhoneTarget;
+import KiemTraSoNguyenTo.KiemTraSNTAdaptee;
+import KiemTraSoNguyenTo.KiemTraSNTAdapter;
+import KiemTraSoNguyenTo.KiemTraSNTTarget;
 import Translation.JapaneseAdaptee;
 import Translation.TranslatorAdapter;
 import Translation.VietnameseTarget;
@@ -52,8 +55,17 @@ public class Main {
         System.out.println(phone2 + " is phone number " + phoneTarget.checkPhoneNumber(phone2));
         System.out.println(phone3 + " is phone number " + phoneTarget.checkPhoneNumber(phone3));
          */
+        /*
         VietnameseTarget client = new TranslatorAdapter(new JapaneseAdaptee());
         client.send("Xin chao");
+         */
+        KiemTraSNTTarget snt = new KiemTraSNTAdapter(new KiemTraSNTAdaptee());
+        int n1 = 10;
+        int n2 = 11;
+        int n3 = 13;
+        System.out.println( n1 + " So nguyen to la : " + snt.kiemTraSo(n1));
+        System.out.println( n2 + " So nguyen to la : " + snt.kiemTraSo(n2));
+        System.out.println( n3 + " So nguyen to la : " + snt.kiemTraSo(n3));
 
     }
 }
